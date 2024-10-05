@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -16,7 +15,7 @@ void main() {
   testWidgets(
     'Creates a default tile with a default indicator aligned to the left',
     (WidgetTester tester) async {
-      await pumpTimeline(tester, TimelineTile());
+      await pumpTimeline(tester, const TimelineTile());
 
       final finderTimeline = find.byType(TimelineTile);
       final timeline = tester.widget(finderTimeline);

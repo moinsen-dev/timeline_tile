@@ -8,7 +8,7 @@ import 'package:timeline_tile/src/tile.dart';
 class TimelineDivider extends StatelessWidget {
   /// Creates a material design divider that can be used in conjunction to [TimelineTile].
   const TimelineDivider({
-    Key? key,
+    super.key,
     this.axis = TimelineAxis.horizontal,
     this.thickness = 2,
     this.begin = 0.0,
@@ -19,8 +19,7 @@ class TimelineDivider extends StatelessWidget {
             'The begin value must be between 0.0 and 1.0'),
         assert(end >= 0.0 && end <= 1.0,
             'The end value must be between 0.0 and 1.0'),
-        assert(end > begin, 'The end value must be bigger than the begin'),
-        super(key: key);
+        assert(end > begin, 'The end value must be bigger than the begin');
 
   /// The axis used to render the line at the [TimelineAxis.vertical]
   /// or [TimelineAxis.horizontal]. Usually, the opposite axis from the tiles.

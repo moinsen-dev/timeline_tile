@@ -37,7 +37,7 @@ enum TimelineAlign {
 /// A tile that renders a timeline format.
 class TimelineTile extends StatelessWidget {
   const TimelineTile({
-    Key? key,
+    super.key,
     this.axis = TimelineAxis.vertical,
     this.alignment = TimelineAlign.start,
     this.startChild,
@@ -58,8 +58,7 @@ class TimelineTile extends StatelessWidget {
             alignment != TimelineAlign.manual ||
                 (lineXY != null && lineXY >= 0.0 && lineXY <= 1.0),
             'The lineX must be provided when aligning manually, '
-            'and must be a value between 0.0 and 1.0 inclusive'),
-        super(key: key);
+            'and must be a value between 0.0 and 1.0 inclusive');
 
   /// The axis used on the tile. See [TimelineAxis].
   /// It defaults to [TimelineAxis.vertical]
@@ -392,15 +391,9 @@ class _TimelinePainter extends CustomPainter {
             ? indicatorStyle.padding.bottom
             : indicatorStyle.padding.right,
         drawGap = indicatorStyle.drawGap,
-        iconData = indicatorStyle.iconStyle != null
-            ? indicatorStyle.iconStyle?.iconData
-            : null,
-        iconColor = indicatorStyle.iconStyle != null
-            ? indicatorStyle.iconStyle?.color
-            : null,
-        iconSize = indicatorStyle.iconStyle != null
-            ? indicatorStyle.iconStyle?.fontSize
-            : null;
+        iconData = indicatorStyle.iconStyle?.iconData,
+        iconColor = indicatorStyle.iconStyle?.color,
+        iconSize = indicatorStyle.iconStyle?.fontSize;
 
   /// The axis used to render the line at the [TimelineAxis.vertical]
   /// or [TimelineAxis.horizontal].

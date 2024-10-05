@@ -5,6 +5,8 @@ import 'package:timeline_tile/timeline_tile.dart';
 import 'showcase_timeline.dart';
 
 class ShowcaseTimelineTile extends StatelessWidget {
+  const ShowcaseTimelineTile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,7 +81,7 @@ class ShowcaseTimelineTile extends StatelessWidget {
 }
 
 class _IndicatorExample extends StatelessWidget {
-  const _IndicatorExample({Key? key, required this.number}) : super(key: key);
+  const _IndicatorExample({required this.number});
 
   final String number;
 
@@ -106,7 +108,7 @@ class _IndicatorExample extends StatelessWidget {
 }
 
 class _RowExample extends StatelessWidget {
-  const _RowExample({Key? key, required this.example}) : super(key: key);
+  const _RowExample({required this.example});
 
   final Example example;
 

@@ -15,7 +15,7 @@ import 'example/example_8.dart';
 import 'example/example_9.dart';
 
 class ShowcaseTimeline extends StatelessWidget {
-  const ShowcaseTimeline({Key? key, required this.example}) : super(key: key);
+  const ShowcaseTimeline({super.key, required this.example});
 
   final Example example;
 
@@ -99,7 +99,7 @@ class ShowcaseTimeline extends StatelessWidget {
 }
 
 class _Code extends StatelessWidget {
-  const _Code({Key? key, required this.code}) : super(key: key);
+  const _Code({required this.code});
 
   final String code;
 
@@ -115,10 +115,9 @@ class _Code extends StatelessWidget {
 
 class _Description extends StatelessWidget {
   const _Description({
-    Key? key,
     required this.description,
     required this.code,
-  }) : super(key: key);
+  });
 
   final String description;
   final String code;
@@ -142,9 +141,8 @@ class _Description extends StatelessWidget {
           ),
           Theme(
             data: Theme.of(context).copyWith(
-              accentColor: Colors.white,
               dividerColor: Colors.transparent,
-              unselectedWidgetColor: Colors.white,
+              unselectedWidgetColor: Colors.white, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
             ),
             child: ExpansionTile(
               title: Text(
@@ -160,19 +158,19 @@ class _Description extends StatelessWidget {
                   onPressed: () {
                     showCodeDialog(context);
                   },
+                  style: ButtonStyle(
+                    side: WidgetStateProperty.all(
+                      BorderSide(
+                        color: Colors.white.withOpacity(0.7),
+                        width: 2,
+                      ),
+                    ),
+                  ),
                   child: Text(
                     'FULL SCREEN',
                     style: GoogleFonts.lato(
                       color: Colors.white.withOpacity(0.7),
                       fontSize: 16,
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                      BorderSide(
-                        color: Colors.white.withOpacity(0.7),
-                        width: 2,
-                      ),
                     ),
                   ),
                 ),
